@@ -1,0 +1,65 @@
+.ui-accordion
+
+  box-sizing: border-box
+
+  .ui-accordion-tab
+    width: 100%
+    margin: 0 auto
+    border-bottom: 1px solid $stroke-gray
+    margin-bottom: 15px
+
+    &[data-expanded] .title .icon
+      transform: translateY(-50%) rotate(180deg)
+
+    .title
+      width: 100%
+      position: relative
+      display: inline-block
+      padding: 16px 0
+      box-sizing: border-box
+
+      cursor: pointer
+      user-select: none
+
+      &:hover
+        .icon
+          transform: translateY(-50%) rotate(180deg)
+
+      a
+        @include adjust-font-size-to(14px)
+        color: $medium-gray
+        font-weight: 500
+        // font-size: 16px
+        text-transform: uppercase
+        margin: 0
+        padding: 0.5em 1em
+
+      .icon
+        width: 1rem
+        top: 45%
+        right: 1em
+        position: absolute
+        transform: translateY(-50%) rotate(0)
+        opacity: 1
+        transition: 500ms ease-out
+
+    .content-container
+      width: 100%
+      margin: 0 auto
+      box-sizing: border-box
+      overflow: hidden
+      max-height: 0
+      // visibility: hidden
+
+    .content
+      width: 100%
+      margin: 0 auto
+      display: block
+      box-sizing: border-box
+      padding: 1em
+
+      > p, > div
+        margin: 0
+        // padding: 0
+        display: block
+        box-sizing: border-box

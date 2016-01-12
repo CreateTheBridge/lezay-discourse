@@ -1,0 +1,111 @@
+.ui-dropzone {
+  @include span(12);
+  float: none;
+
+  .dropzone {
+    @include span(12);
+
+    // height: (1.5rem * 5);
+    // min-height: (1.5rem * 5);
+    border-radius: 0.5em;
+    cursor: pointer;
+    user-select: none;
+
+    position: relative;
+    float: none;
+    border: 1px dashed $stroke-gray;
+    height: 9rem;
+    min-height: 9rem;
+    width: 15em;
+
+    .upload-text {
+      display: none;
+    }
+
+    &.logo {
+      background: url('images/cms/upload-logo-icon.svg') no-repeat center top;
+      background-size: 25% 100%;
+    }
+
+    &.photo {
+      background: url('images/cms/upload-content-icon.svg') no-repeat center top;
+      background-size: 25% 100%;
+    }
+
+    h6 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .dz-message {
+      top: 45%;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      transform: translateY(-50%);
+      span { display: none; }
+
+      // &::after {
+      //   content: url('/assets/images/edit-stream/upload-icon.svg');
+      //   width: 35px;
+      //   height: 35px;
+      //   top: 50%;
+      //   left: 50%;
+      //   position: absolute;
+      //   transform: translate(-50%, -50%);
+      // }
+    }
+
+    .dz-preview {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      border-radius: 0.5em;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .dz-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5em;
+
+      img {
+        width: 100%;
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%) !important;
+      }
+    }
+
+    .dz-success-mark, .dz-error-mark {
+      margin-top: -27px !important;
+      margin-left: -27px !important;
+    }
+
+    .dz-details {
+      padding: 3em 1em;
+    }
+
+    .dz-progress {
+      top: auto;
+      right: 0.5em;
+      left: 0.5em;
+      bottom: 0.5em;
+      margin-left: auto;
+      width: auto;
+      position: absolute;
+    }
+
+    .dz-remove {
+      line-height: 1.5em;
+    }
+  }
+}

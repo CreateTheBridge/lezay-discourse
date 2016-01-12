@@ -1,0 +1,125 @@
+// Button Mixin
+@mixin button($button-color, $button-background-color) {
+  color: $button-color;
+  background-color: $button-background-color;
+
+  &:hover {
+    color: scale_color($button-color, $lightness: -20%);
+    background-color: scale_color($button-background-color, $lightness: -20%);
+  }
+}
+
+// Icon Mixin
+@mixin icon($icon-color, $icon-color-hover) {
+  color: $icon-color;
+
+  &:hover {
+    color: $icon-color-hover;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content;}
+  &:-moz-placeholder           {@content;}
+  &::-moz-placeholder          {@content;}
+  &:-ms-input-placeholder      {@content;}
+}
+
+// Applies vertical alignment fix for elements that aren't
+//  being vertically align with just
+//  display: inline-block & vertical-align: middle
+@mixin vertical-align-fix {
+  &:before {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// Blue dots for Slick
+// Transparent default state
+// Blue active state
+@mixin blue-slick-dots {
+  .slick-dots {
+    li {
+      width: 1rem;
+      height: 1rem;
+      margin: 0 1rem;
+
+      button {
+        width: 100%;
+        height: 100%;
+
+        &::before {
+          width: 100%;
+          height: 100%;
+          line-height: 0.3rem;
+          color: transparent;
+          opacity: 1;
+          border: 1px solid $stroke-gray;
+          border-radius: 100%;
+          transition: 300ms ease-out;
+        }
+      }
+
+      &.slick-active button, button:hover {
+        &::before {
+          background: $blue;
+          border-color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// Media Query breakpoints for the common ones.
+// Anything under these resolutions.
+@mixin mq-desktop {
+  @media only screen and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin mq-tablet {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mq-phablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mq-phone {
+  @media only screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+// Anything over these resolutions.
+@mixin over-desktop {
+  @media only screen and (min-width: 1921px) {
+    @content;
+  }
+}
+
+@mixin over-tablet {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin over-phablet {
+  @media only screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin over-phone {
+  @media only screen and (min-width: 641px) {
+    @content;
+  }
+}

@@ -1,0 +1,111 @@
+// Buttons
+%button {
+  padding: 0.9em 2em;
+  display: inline-block;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  color: $button-color;
+  background-color: $button-background-color;
+  border: $button-border;
+  border: $button-border solid $button-border-color;
+  border-radius: 0; //$round-edges;
+  transition: all 300ms ease-out;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+
+  &:hover {
+    color: $button-color-hover;
+    background-color: $button-background-color-hover;
+    border: $button-border solid $button-border-color-hover;
+  }
+}
+
+.button, input[type="submit"] {
+  @extend %button;
+
+  &[disabled], &.disabled {
+    cursor: auto;
+  }
+
+  &.dark {
+    color: white;
+    border: none;
+    background-color: $dark-gray;
+    text-transform: uppercase;
+
+    &:hover {
+      color: white;
+      background-color: scale-color($dark-gray, $lightness: 10%);
+    }
+  }
+
+  &.white {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+
+    &:hover {
+      color: $blue;
+      background-color: white;
+
+      &[disabled], &.disabled {
+        border: 1px solid $medium-gray;
+        background-color: $medium-gray;
+      }
+    }
+  }
+
+  &.inverter {
+    color: $medium-gray;
+    border: 1px solid $medium-gray;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    &:hover {
+      color: white;
+      background-color: $medium-gray;
+    }
+  }
+
+  &.blue {
+    color: white;
+    border: none;
+    background-color: $blue;
+
+    &:hover {
+      color: white;
+      background-color: scale-color($blue, $lightness: 10%);
+    }
+  }
+
+  &.sandwich {
+    text-transform: uppercase;
+    color: $medium-gray;
+    background: white;
+    padding: 0.75rem 2rem;
+    border-top: 1px solid $medium-gray;
+    border-bottom: 1px solid $medium-gray;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+
+    &:hover {
+      border-left: 1px solid $medium-gray;
+      border-right: 1px solid $medium-gray;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  &.blue-inverter {
+    color: black;
+    border: 1px solid $stroke-gray;
+    background-color: transparent;
+
+    &:hover {
+      color: white;
+      background-color: $blue;
+    }
+  }
+}

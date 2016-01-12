@@ -1,0 +1,20 @@
+.shop-form {
+  padding-top: 0.25em;
+
+  label {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    min-width: 45%;
+    margin-bottom: 1.4375rem;
+
+    &.button-cta {
+      min-width: 25%;
+    }
+
+    &.submit-button {
+      top: 25px !important;
+    }
+  }
+}

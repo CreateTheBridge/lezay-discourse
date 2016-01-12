@@ -1,0 +1,96 @@
+.lezaypedia-downloads-form {
+  width: 100%;
+  margin-top: 4.5em;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  .submit-button {
+    top: 24px !important;
+  }
+
+  .left, .right {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+
+    label {
+      margin-bottom: 1.5rem;
+      margin-right: 4rem;
+      margin-left: 1.7rem;
+    }
+  }
+
+  .left {
+    width: 60%;
+    text-align: center;
+    position: relative;
+
+    .url-input {
+      border: 1px solid $stroke-gray;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 2.125em;
+
+      label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+
+      input {
+        display: inline-block;
+        width: 55%;
+        background-color: $light-gray;
+        margin-bottom: 0;
+        border: none;
+        border-left: 1px solid $stroke-gray;
+        border-radius: 0;
+      }
+    }
+
+    > label {
+
+      &::before, &::after {
+        content: '';
+        width: 40%;
+        height: 1px;
+        background: $stroke-gray;
+        position: absolute;
+        margin-top: 11px;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 27px;
+      }
+    }
+
+    .dropzone {
+      margin: 0 auto;
+      margin-bottom: 2.125rem;
+    }
+
+    input, textarea {
+      width: 90%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    input {
+      margin-bottom: 2.125rem;
+      min-width: 24em;
+    }
+
+    textarea {
+      min-width: 26em;
+      min-height: 9.75em;
+    }
+  }
+
+  .right {
+    width: 38%;
+  }
+}

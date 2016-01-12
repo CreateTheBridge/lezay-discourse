@@ -1,0 +1,40 @@
+.delete-alert-container {
+  position: fixed;
+  top: 50%;
+  padding: 1.5em 1.5em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 16em;
+  text-align: center;
+  background-color: black;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 200;
+  overflow: hidden;
+  transition: width 0s 500ms, opacity 500ms;
+
+  h5 {
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid white;
+      background: transparent;
+    }
+  }
+
+  &:not(.active) {
+    width: 0;
+    overflow: hidden;
+  }
+
+  &.active {
+    opacity: 1;
+    transition: width 0s, opacity 500ms;
+  }
+}

@@ -1,0 +1,639 @@
+.wizard.full-screen {
+  .ui-modal {
+    overflow-y: scroll;
+    z-index: 3;
+  }
+
+  .ui-modal .modal {
+    width: 100vw;
+    // min-height: 91vh;
+    background-color: white;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+
+    .skip-link {
+      width: 10.375em;
+      position: absolute;
+      top: 3em; right: 7.5em;
+      z-index: 5;
+
+      a {
+        letter-spacing: normal;
+        text-transform: uppercase;
+
+        img {
+          max-width: 2.25em;
+        }
+
+        span {
+          margin: 0.25rem 0.375rem;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  .ui-modal .overlay {
+    display: none;
+  }
+
+  .wizard-step {
+    width: 100%;
+    padding: 1.5em 1em;
+    top: 40%;
+    // left: 50%;
+    position: absolute;
+    // transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    text-align: center;
+    box-sizing: border-box;
+
+    .content-container {
+      @include container(77.25em);
+
+      img {
+        max-width: 18.5em;
+        margin: 0 auto 4.5em;
+      }
+
+      h3 {
+        margin-bottom: 4.5rem;
+        color: $medium-gray;
+      }
+
+      .stacked-image {
+        position: relative;
+        display: inline-block;
+
+        img {
+          &:first-of-type {
+            max-width: initial;
+          }
+
+          &:last-of-type {
+            max-width: 10.5em;
+            margin: 0;
+            position: absolute;
+            top: 0.75em; left: 7em;
+          }
+        }
+      }
+    }
+
+    .progress-controls {
+      a {
+        margin-bottom: 1.5rem;
+        display: inline-block;
+
+        img {
+          width: 3em;
+          height: 3em;
+          margin: 0;
+        }
+      }
+
+      .progress-bar {
+        width: 412px;
+        height: 6px;
+        margin: 0 auto 1.5em;
+        position: relative;
+        display: block;
+
+        .background {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0; left: 0;
+          background: $light-gray;
+          border-radius: 1em;
+        }
+
+        .progress {
+          width: 5%;
+          height: 100%;
+          position: absolute;
+          top: 0; left: 0;
+          background: $light-blue;
+          border-radius: 1em;
+        }
+      }
+
+      span {
+        @include adjust-font-size-to(10px);
+        color: $medium-gray;
+        letter-spacing: 0.10em;
+        font-style: italic;
+      }
+    }
+
+    .inputs {
+      text-align: center;
+
+      .input {
+        margin: 0.5em;
+        position: relative;
+        display: inline-block;
+
+        label {
+          color: $medium-gray;
+          font-weight: 400;
+
+          input[type="checkbox"] {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .tooltip {
+          width: 18.75rem;
+          padding: 1rem;
+          position: absolute;
+          top: 4.5rem; left: -2.625rem;
+          background-color: $lighter-gray;
+          text-align: left;
+          opacity: 0;
+          transition: opacity 300ms;
+          pointer-events: none;
+          box-sizing: border-box;
+
+          span {
+            color: $medium-gray;
+            display: block;
+
+            &:first-of-type {
+              @include adjust-font-size-to(14px);
+              margin-bottom: 1.5rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              letter-spacing: 0.10em;
+            }
+
+            &:last-of-type {
+              @include adjust-font-size-to(12px);
+              letter-spacing: 0.075em;
+            }
+          }
+
+          &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -1rem; left: 8.375rem;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            border-bottom: 16px solid $lighter-gray;
+          }
+        }
+
+        &:hover .tooltip {
+          opacity: 1;
+        }
+
+        &.custom-input {
+          label {
+            width: 219px;
+            padding: 0.5rem 0;
+            color: $medium-gray;
+            font-weight: 400;
+            border: 1px solid $stroke-gray;
+            border-radius: 1.5rem;
+            transition: color 300ms, background-color 300ms;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover {
+              color: white;
+              background-color: $medium-gray;
+              border: 1px solid $medium-gray;
+            }
+          }
+
+          input[type="checkbox"], input[type="radio"] {
+            position: absolute;
+            left: -9999px;
+            visibility: hidden;
+
+            &:checked + label {
+              position: relative;
+              color: white;
+              background-color: $medium-gray;
+              border: 1px solid $medium-gray;
+            }
+          }
+
+          input[type="checkbox"]:checked + label:after {
+            width: 1.5rem;
+            height: 1.5rem;
+            content: '';
+            background: url('images/consultation/icons/white-remove-icon.svg') no-repeat center center;
+            position: absolute;
+            top: 50%; right: 0.5rem;
+            transform: translateY(-50%);
+          }
+        }
+
+        input[type="text"] {
+          width: 20.25rem;
+          padding: 0.45em 0;
+          border: none;
+          border-bottom: 1px solid $stroke-gray;
+          border-radius: 0;
+          background-color: transparent;
+          transition: border-bottom 300ms, background-color 300ms;
+
+          &:hover, &:focus {
+            border-bottom: 1px solid $medium-gray;
+            background-color: $light-gray;
+          }
+
+          &::-webkit-input-placeholder {
+            color: $medium-gray;
+          }
+
+          &:-moz-placeholder {
+            color: $medium-gray;
+          }
+
+          &::-moz-placeholder {
+            color: $medium-gray;
+          }
+
+          &:-ms-input-placeholder {
+            color: $medium-gray;
+          }
+        }
+      }
+    }
+
+    .input-select {
+      max-width: 32.375em;
+      margin: 0 auto;
+      position: relative;
+
+      select {
+        width: 100%;
+        margin: 0;
+        padding: 11px 0 11px 44px;
+        border-radius: 1px;
+        border: 1px solid $medium-gray;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      &:after {
+        content: '';
+        width: 7px;
+        height: 11px;
+        position: absolute;
+        top: 50%; right: 1.5rem;
+        transform: translateY(-50%);
+        background: url('images/consultation/icons/input-grey-arrow.svg') no-repeat;
+      }
+    }
+
+    &.sensitive-skin, &.rosacea-diagnosis, &.firmness-loss, &.fine-lines, &.scar-color, &.currently-pregnant, &.frequently-smoke {
+      .inputs .input {
+        margin: 1.5em;
+
+        label {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &.choose-version {
+      .content-container {
+        h3 {
+          margin-bottom: 6rem;
+        }
+
+        a.version-choice {
+          margin: 0 6em 3rem;
+          display: inline-block;
+          vertical-align: top;
+
+          img {
+            margin-bottom: 3em;
+            max-width: 8em;
+            display: block;
+          }
+
+          span {
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid transparent;
+            transition: border 300ms;
+          }
+
+          p {
+            max-width: 13.25rem;
+            margin: 0 auto;
+          }
+
+          &:hover {
+            span {
+              border-bottom: 1px solid $pink;
+            }
+          }
+        }
+      }
+    }
+
+    &.choose-age {
+      .input-select {
+        max-width: 18.75rem;
+
+        select {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &.choose-gender {
+      .content-container {
+        img {
+          margin-bottom: 1.5em;
+          display: block;
+        }
+
+        .gender-option {
+          margin: 0 0.5em;
+          display: inline-block;
+          text-transform: uppercase;
+          cursor: pointer;
+
+          &:hover p {
+            border-bottom: 1px solid $pink;
+          }
+
+          p {
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid transparent;
+            display: inline-block;
+            transition: border-bottom 300ms;
+          }
+        }
+      }
+    }
+
+    &.forehead-skin {
+      .content-container .stacked-image img:last-of-type {
+        max-width: 80px;
+        top: 28px;
+        left: 60px;
+      }
+    }
+
+    &.nose-skin {
+      .content-container .stacked-image img:last-of-type {
+        max-width: 1.875em;
+        top: 4.75em;
+        left: 5.4375em;
+      }
+    }
+
+    &.cheek-skin {
+      .content-container .stacked-image img:last-of-type {
+        max-width: 5.25em;
+        top: 5.375em;
+        left: 3.8125em;
+      }
+    }
+
+    &.mouth-skin {
+      .content-container .stacked-image img:last-of-type {
+        max-width: 3.75em;
+        top: 7.75em;
+        left: 4.625em;
+      }
+    }
+
+    &.pore-size, &.breakout-regularity {
+      .content-container img {
+        max-width: 11.75em;
+      }
+    }
+
+    &.sensitive-skin {
+      .content-container img {
+        max-width: 14em;
+      }
+    }
+
+    &.eczema-forms {
+      padding: 1.5em 1em 7.5em;
+
+      .content-container .stacked-image img:last-of-type {
+        top: 0; left: 6.625em;
+      }
+    }
+
+    &.pigment-changes {
+      .content-container img {
+        max-width: 12.375em;
+      }
+    }
+
+    &.currently-pregnant, &.water-consumption {
+      .content-container img {
+        max-width: 9.375em;
+      }
+    }
+
+    &.current-diet {
+      .content-container {
+        @include container(74em);
+      }
+    }
+
+    &.alcohol-consumption {
+      .content-container img {
+        max-width: 8.125em;
+      }
+    }
+
+    &.professional-treatment {
+      .content-container {
+        @include container(74em);
+
+        img {
+          max-width: 14.125em;
+        }
+      }
+    }
+
+    &.prescription-medication {
+      .content-container {
+        img {
+          max-width: 9.5em;
+        }
+
+        .inputs .input {
+          margin: 0.5em 1em;
+        }
+      }
+    }
+
+    &.included-routine {
+      .inputs {
+        text-align: left;
+
+        .input.custom-input:last-of-type label {
+          border: 1px solid $medium-gray;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1440px) {
+    .wizard-step {
+      .content-container {
+        img, h3 {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      .inputs .input .tooltip {
+        top: initial;
+        bottom: 4.5rem;
+
+        &:before {
+          top: initial;
+          bottom: -1rem;
+          border-bottom: none;
+          border-top: 16px solid #f9f9f9;
+        }
+      }
+
+      &.choose-version {
+        .content-container {
+          h3 {
+            margin-bottom: 1.5rem;
+          }
+
+          a.version-choice {
+            margin: 0 6em 1.5rem;
+
+            img {
+              margin-bottom: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .ui-modal .modal .skip-link {
+      right: 1.5em;
+    }
+
+    .wizard-step {
+      .inputs {
+        text-align: center;
+
+        .input.custom-input label {
+          &:hover {
+            color: $medium-gray;
+            background-color: transparent;
+          }
+        }
+
+        .input .tooltip {
+          display: none;
+        }
+      }
+
+      .input-select {
+        max-width: 32em;
+      }
+
+      &.choose-version .content-container a.version-choice {
+        margin: 0 3em 1.5rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    .ui-modal .modal {
+      min-height: 91vh;
+      bottom: initial;
+
+      .skip-link {
+        top: 1.5em;
+      }
+    }
+
+    .wizard-step {
+      padding: 4.5em 1em;
+      position: relative;
+      transform: none;
+
+      .content-container {
+        img {
+          display: none;
+        }
+      }
+
+      .progress-controls {
+        img {
+          display: block;
+        }
+
+        .progress-bar {
+          width: 100%;
+        }
+      }
+
+      .inputs {
+        text-align: center;
+
+        .input, .input.custom-input {
+          width: 48%;
+          margin: 0.5em 0;
+
+          label {
+            width: 100%;
+          }
+
+          input[type="text"] {
+            width: 100%;
+          }
+        }
+      }
+
+      &.choose-version {
+        padding: 4.5em 1em 9em;
+
+        .content-container {
+          a.version-choice {
+            display: block;
+          }
+        }
+      }
+
+      &.choose-gender {
+        padding: 4.5em 1em 9em;
+      }
+
+      &.eczema-forms {
+        padding: 4.5em 1em;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .wizard-step {
+      .inputs {
+        .input, .input.custom-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

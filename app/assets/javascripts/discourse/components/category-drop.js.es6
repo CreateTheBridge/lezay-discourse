@@ -8,8 +8,8 @@ export default Ember.Component.extend({
   tagName: 'li',
 
   iconClass: function() {
-    if (this.get('expanded')) { return "fa fa-caret-down"; }
-    return "fa fa-caret-right";
+    if (this.get('expanded')) { return "caret-down"; }
+    return "caret-right";
   }.property('expanded'),
 
   allCategoriesUrl: function() {

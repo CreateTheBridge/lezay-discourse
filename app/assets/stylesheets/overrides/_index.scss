@@ -1,5 +1,76 @@
 #main {
   #main-outlet {
     padding-top: 132px;
-  }  
+  }
+
+  h5 {
+    font-size: 1em;
+    line-height: 1.5em;
+    letter-spacing: 0.75em;
+    display: inline-block;
+  }
+
+  .category-breadcrumb {
+    a.badge-category {
+      color: $medium-gray !important;
+      background-color: transparent !important;
+      text-transform:capitalize;
+
+      &:hover {
+        color: scale_color($medium-gray, $lightness: 20%) !important;
+      }
+
+      svg {
+        width: 7px;
+        vertical-align: middle;
+        transition: transform 250ms;
+
+        &.caret-down {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .nav-pills {
+    float: none;
+    display: inline-block;
+    vertical-align: sub;
+
+    li {
+      margin-right: 0;
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    > li.active > a {
+      background-color: $stroke-gray;
+    }
+
+    a {
+      padding: 2px 24px 0px;
+      color: $medium-gray;
+      font-size: .66667em !important;
+      text-transform: uppercase;
+      border-radius: 24px;
+
+      &:hover {
+        color: scale_color($medium-gray, $lightness: 20%) !important;
+        background-color: scale_color($stroke-gray, $lightness: 50%);
+      }
+    }
+  }
+
+  a#create-topic {
+    margin: 0;
+    color: $medium-gray;
+    background: transparent;
+    text-transform: uppercase;
+
+    &:hover {
+      color: scale_color($medium-gray, $lightness: 20%);
+      background: transparent;
+    }
+  }
 }

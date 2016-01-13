@@ -3,5 +3,5 @@
 {{navigation-bar navItems=navItems filterMode=filterMode}}
 
 {{#if canCreateTopic}}
-  <button id="create-topic" class='btn btn-default' {{action "createTopic"}}><i class='fa fa-plus'></i>{{i18n 'topic.create'}}</button>
+  <a href="#" id="create-topic" class='btn btn-default' {{action "createTopic"}}>{{i18n 'topic.create'}}</a>
 {{/if}}

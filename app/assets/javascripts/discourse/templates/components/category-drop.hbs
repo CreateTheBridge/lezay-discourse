@@ -8,14 +8,21 @@
   </a>
 {{else}}
   {{#if noSubcategories}}
-  <a href {{action "expand"}} class='badge-category home' style={{badgeStyle}}>{{i18n 'categories.no_subcategory'}}</a>
+    <h5><a href {{action "expand"}} class='badge-category home' style={{badgeStyle}}>{{i18n 'categories.no_subcategory'}}</a></h5>
   {{else}}
-  <a href {{action "expand"}} class='badge-category home' style={{badgeStyle}}>{{allCategoriesLabel}}</a>
+    <h5><a href {{action "expand"}} class='badge-category home' style={{badgeStyle}}>{{allCategoriesLabel}}</a></h5>
   {{/if}}
 {{/if}}
 
 {{#if categories}}
-  <a href {{action "expand"}} class={{dropdownButtonClass}} style={{badgeStyle}}><i class={{iconClass}}></i></a>
+  <a href {{action "expand"}} class={{dropdownButtonClass}} style={{badgeStyle}}>
+    <svg class={{iconClass}} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Isolation_Mode" x="0px" y="0px" viewBox="0 0 6 11" style="enable-background:new 0 0 6 11;" xml:space="preserve">
+      <style type="text/css">
+      	.st0{fill:none;stroke:#666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+      </style>
+      <polyline id="XMLID_547_" class="st0" points="1,10.4 5,5.5 1,0.6 "/>
+    </svg>
+  </a>
   <section {{bind-attr class="expanded::hidden :category-dropdown-menu :chooser"}}>
     <div class='cat'><a {{bind-attr href=allCategoriesUrl}} data-drop-close="true" class='badge-category home'>{{allCategoriesLabel}}</a></div>
     {{#if subCategory}}

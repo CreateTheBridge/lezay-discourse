@@ -9,7 +9,7 @@ export default Ember.Object.extend({
   }.property(),
 
   sortClass: function(){
-    return "fa fa-chevron-" + (this.parent.ascending ? "up" : "down");
+    return "chevron-" + (this.parent.ascending ? "up" : "down");
   }.property(),
 
   isSorting: function(){

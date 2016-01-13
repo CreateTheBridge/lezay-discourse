@@ -4,6 +4,10 @@
 @import 'modal';
 @import 'index';
 
+*:focus {
+  outline: none;
+}
+
 #main header {
   margin-bottom: initial;
 

@@ -1,16 +1,153 @@
-<div class='wrap'>
-  <div class='contents clearfix'>
-    {{home-logo minimized=showExtraInfo}}
-    {{plugin-outlet "header-after-home-logo"}}
+<div class="full-menu-container">
+  <ul>
+    <div class="li-container">
+      <li class="close-nav">
+      </li>
+    </div>
 
-    <div class='panel clearfix'>
-      {{#unless currentUser}}
-        {{#if showSignUpButton}}
-          {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
-        {{/if}}
-        {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
-      {{/unless}}
-      <ul class='icons clearfix' role='navigation'>
+    <div class="li-container">
+      <li class="content-bar">
+        <div class="vertical-centered-container">
+          <ul class="menu-nav-list">
+
+            <li>
+              <a href="/">
+                HOME
+              </a>
+            </li>
+
+            <li>
+              <a href="/about">
+                ABOUT
+              </a>
+            </li>
+
+            <li>
+              <a href="community">
+                COMMUNITY
+              </a>
+            </li>
+
+            <li>
+              <a href="/shop">
+                SHOP
+              </a>
+            </li>
+
+            <li>
+              <a href="//blog.lezay.com/">
+                BLOG
+              </a>
+            </li>
+
+            <div class="lezaypedia-and-brands">
+              <li>
+                <a href="/lezaypedia">
+                  LEZAYPEDIA
+                </a>
+              </li>
+
+              <li>
+                <a href="/brands">
+                  OUR BRANDS
+                </a>
+              </li>
+            </div>
+
+            <li>
+              <a href="#">
+                START CONSULTATION
+              </a>
+            </li>
+
+            {{#unless currentUser}}
+              {{#if showSignUpButton}}
+                <li>
+                  <a href="#" {{action "showCreateAccount"}} class="close-nav">
+                    LOGIN<
+                  </a>
+                </li>
+              {{/if}}
+            {{/unless}}
+          </ul>
+        </div>
+      </li>
+    </div>
+
+    <div class="li-container">
+      <li class="company-info content-bar">
+        <div class="vertical-centered-container">
+          <h2>
+            Company
+          </h2>
+
+          <a class="mission">
+            Our mission is your skin. We want that you feel great in your own skin, that you are yourself with what you are.
+          </a>
+          <p>
+            That's why we only propose products that have a higher concentration of active ingredients. We have selected our products portfolio with our professional experts, our chemist Rainer Kröpke and our surgeon Dr. Yusuf Yildirim.
+          </p>
+          <ul class="contact-info">
+            <li>
+              <p>
+                CONTACT:
+              </p>
+              <a href="tel:+4915115725142">
+                <p>
+                  +49 151 157 25 142
+                </p>
+              </a>
+            </li>
+
+            <li>
+              <p>
+                EMAIL:
+              </p>
+              <a href="mailto:hello@lezay.com">
+                <p>
+                  hello@lezay.com
+                </p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </li>
+    </div>
+
+    <div class="li-container">
+      <li class="close-nav">
+      </li>
+    </div>
+  </ul>
+</div>
+
+<div class="nav-container unveiling-nav">
+  <nav class="top-bar">
+    <a href="/" class="site-home-link">
+      <h3 class="site-home">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 42 49" style="enable-background:new 0 0 42 49;" xml:space="preserve">
+          <style type="text/css">
+          	.st0{fill:#666766;}
+          </style>
+          <g id="XMLID_10_">
+          	<path class="st0" d="M21.1,48.2L0.8,36.5V13.4L21,1.8l20.2,11.6V36L21.1,48.2z M2,35.9l19.1,11l19.1-11.5V14.1L21,3.1l-19,11V35.9z   "/>
+          </g>
+          <g id="XMLID_4_">
+          	<path class="st0" d="M21,4.7l17.6,29.8L3.5,35L21,4.7 M21,2.4L1.4,36.2l39.3-0.6L21,2.4L21,2.4z"/>
+          </g>
+          <g id="XMLID_3_">
+          	<polygon class="st0" points="20.5,25.5 1.1,14.2 1.7,13.2 20.5,24.2 40.4,13.2 41,14.2  "/>
+          </g>
+          <g id="XMLID_2_">
+        		<rect x="9.5" y="35.6" transform="matrix(2.330459e-02 0.9997 -0.9997 2.330459e-02 56.4552 14.5494)" class="st0" width="22.6" height="1.2"/>
+          </g>
+        </svg>
+      </h3>
+    </a>
+
+    <div class="right">
+      <ul>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
         {{/if}}
@@ -25,15 +162,15 @@
                            href="search"}}
         {{/header-dropdown}}
 
-        {{#header-dropdown iconId="toggle-hamburger-menu"
-                           icon="bars"
-                           toggleVisible=hamburgerVisible
-                           loginAction="showLogin"
-                           title="hamburger_menu"}}
-          {{#if flaggedPostsCount}}
-            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+        {{#unless currentUser}}
+          {{#if showSignUpButton}}
+            <li>
+              <a href="#" {{action "showCreateAccount"}}>
+                <span data-hover="LOGIN/SIGN UP">LOGIN/SIGN UP</span>
+              </a>
+            </li>
           {{/if}}
-        {{/header-dropdown}}
+        {{/unless}}
 
         {{#if currentUser}}
           {{#header-dropdown iconId="current-user"
@@ -53,12 +190,14 @@
       </ul>
         {{plugin-outlet "header-before-dropdowns"}}
         {{user-menu visible=userMenuVisible logoutAction="logout"}}
-        {{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
         {{search-menu visible=searchVisible}}
     </div>
+  </nav>
 
-    {{#if showExtraInfo}}
-      {{header-extra-info topic=topic}}
-    {{/if}}
-  </div>
+  {{#if showExtraInfo}}
+    {{header-extra-info topic=topic}}
+  {{/if}}
 </div>
+<button id="ember584" class="ember-view tcon tcon-menu--arrow tcon-menu--arrowleft" type="button" aria-label="toggle menu" style="pointer-events: all; opacity: 1;"><span class="tcon-menu__lines" aria-hidden="true"></span>
+  <span class="tcon-visuallyhidden">toggle menu</span>
+</button>

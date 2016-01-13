@@ -11,7 +11,7 @@ body {
 a {
   font-family: $header-font-family;
   font-weight: $medium-font-weight;
-  font-size: rem-calc(14);
+  font-size: rem-calc(14) !important;
   color: $link-color;
   letter-spacing: 0.10em;
   text-decoration: none;
@@ -98,77 +98,77 @@ cite {
 }
 
 // Modular Scale
-h1 {
-  font-size: 5.0625em;
-  line-height: 1.18519em;
-}
-
-h2 {
-  font-size: 3.375em;
-  line-height: 1.33333em;
-}
-
-h3 {
-  font-size: 2.25em;
-  line-height: 1.33333em;
-}
-
-h4 {
-  font-size: 1.5em;
-  line-height: 2em;
-}
-
-h5 {
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-h6 {
-  font-size: .66667em;
-  line-height: 2.25em;
-}
-
-p {
-  font-size: .875em;
-  line-height: 1.71429em;
-}
-
-@media only screen and (max-width: 1024px) {
-  h1 {
-    font-size: 3.16049em;
-    line-height: 1.42383em;
-  }
-
-  h2 {
-    font-size: 2.37037em;
-    line-height: 1.26563em;
-  }
-
-  h3 {
-    font-size: 1.77778em;
-    line-height: 1.6875em;
-  }
-
-  h4 {
-    font-size: 1.33333em;
-    line-height: 2.25em;
-  }
-
-  h5 {
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-
-  h6 {
-    font-size: .66667em;
-    line-height: 2.25em;
-  }
-
-  p {
-    font-size: .875em;
-    line-height: 1.71429em;
-  }
-}
+// h1 {
+//   font-size: 5.0625em;
+//   line-height: 1.18519em;
+// }
+//
+// h2 {
+//   font-size: 3.375em;
+//   line-height: 1.33333em;
+// }
+//
+// h3 {
+//   font-size: 2.25em;
+//   line-height: 1.33333em;
+// }
+//
+// h4 {
+//   font-size: 1.5em;
+//   line-height: 2em;
+// }
+//
+// h5 {
+//   font-size: 1em;
+//   line-height: 1.5em;
+// }
+//
+// h6 {
+//   font-size: .66667em;
+//   line-height: 2.25em;
+// }
+//
+// p {
+//   font-size: .875em;
+//   line-height: 1.71429em;
+// }
+//
+// @media only screen and (max-width: 1024px) {
+//   h1 {
+//     font-size: 3.16049em;
+//     line-height: 1.42383em;
+//   }
+//
+//   h2 {
+//     font-size: 2.37037em;
+//     line-height: 1.26563em;
+//   }
+//
+//   h3 {
+//     font-size: 1.77778em;
+//     line-height: 1.6875em;
+//   }
+//
+//   h4 {
+//     font-size: 1.33333em;
+//     line-height: 2.25em;
+//   }
+//
+//   h5 {
+//     font-size: 1em;
+//     line-height: 1.5em;
+//   }
+//
+//   h6 {
+//     font-size: .66667em;
+//     line-height: 2.25em;
+//   }
+//
+//   p {
+//     font-size: .875em;
+//     line-height: 1.71429em;
+//   }
+// }
 
 // $typographic-element: (
 //   h1: (

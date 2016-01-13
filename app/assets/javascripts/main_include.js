@@ -108,3 +108,6 @@
 //= require_tree ./discourse/pre-initializers
 //= require_tree ./discourse/initializers
 //= require_tree ./discourse/services
+
+//= require tcon
+//= require menu

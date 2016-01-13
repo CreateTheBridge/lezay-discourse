@@ -1,0 +1,23 @@
+@import 'tcon';
+@import 'navigation';
+@import 'menu';
+@import 'modal';
+@import 'index';
+
+#main header {
+  margin-bottom: initial;
+
+  &.d-header {
+    height: initial;
+    padding-top: initial;
+    position: initial;
+    top: initial; left: initial;
+    background-color: transparent;
+    box-shadow: none;
+    z-index: initial;
+  }
+}
+
+.wrap .contents {
+  position: initial;
+}

@@ -1,0 +1,153 @@
+.extra-info-wrapper {
+  padding: 1.5em 1em;
+}
+
+#topic-title {
+  a.fancy-title {
+    color: $medium-gray;
+    font-size: 1.5rem !important;
+    line-height: 2rem;
+  }
+
+  a.badge-wrapper {
+    text-transform: uppercase;
+
+    .badge-category-bg {
+      line-height: 0.75;
+      border-radius: 50%;
+    }
+
+    span.badge-category {
+      color: $medium-gray !important;
+
+      &:hover {
+        color: scale_color($medium-gray, $lightness: 20%) !important;
+      }
+    }
+  }
+}
+
+.posts {
+  .names .username a {
+    color: $medium-gray;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+
+    &:hover {
+      color: scale_color($medium-gray, $lightness: 20%) !important;
+    }
+  }
+
+  .topic-meta-data .post-info a {
+    color: #999999;
+
+    &:hover {
+      color: scale_color(#999999, $lightness: 20%) !important;
+    }
+  }
+
+  .cooked > * {
+    color: $medium-gray;
+  }
+
+  .topic-map {
+    background: $light-gray;
+
+    .buttons .btn {
+      padding: 22px 23px 16px;
+      background: $light-gray;
+
+      svg {
+        width: 8px;
+        pointer-events: none;
+
+        &.chevron-down {
+          transform: rotate(90deg);
+        }
+
+        &.chevron-up {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    .map {
+      a {
+        color: #999999;
+
+        &:hover {
+          color: scale_color(#999999, $lightness: 20%) !important;
+        }
+
+        h4, span {
+          font-size: .66667rem;
+        }
+
+        h4 {
+          color: $medium-gray;
+
+          &:hover {
+            color: scale_color($medium-gray, $lightness: 20%) !important;
+          }
+        }
+      }
+
+      span.number {
+        color: $medium-gray;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  nav.post-controls button {
+    color: #999999;
+
+    &:hover {
+      color: scale_color(#999999, $lightness: -20%);
+    }
+
+    &.create {
+      color: #999999;
+
+      &:hover {
+        color: scale_color(#999999, $lightness: -20%);
+      }
+    }
+  }
+
+  a.reply-to-tab {
+    span {
+      color: $medium-gray;
+
+      &:hover {
+        color: scale_color($medium-gray, $lightness: 20%) !important;
+      }
+    }
+  }
+
+  .topic-list {
+    .posts {
+      width: 86px;
+    }
+
+    .activity {
+      width: 92px;
+    }
+  }
+
+  .topic-list-item a {
+    color: $medium-gray;
+
+    &:hover {
+      color: scale_color($medium-gray, $lightness: 20%);
+    }
+
+    &.posts-map {
+      color: $dark-gray !important;
+
+      &:hover {
+        color: scale_color($dark-gray, $lightness: 20%) !important;
+      }
+    }
+  }
+}

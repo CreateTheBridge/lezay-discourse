@@ -3,6 +3,7 @@
 @import 'menu';
 @import 'modal';
 @import 'index';
+@import 'topic';
 
 *:focus {
   outline: none;
@@ -24,4 +25,9 @@
 
 .wrap .contents {
   position: initial;
+}
+
+.badge-category-bg {
+  line-height: 0.8;
+  border-radius: 50%;
 }

@@ -1,5 +1,106 @@
 {{#unless complete}}
   <div class="modal-body">
+    <div class="signup">
+      <div class="frame">
+        <div class="bg-logo">
+          {{partial 'svgs/community-header'}}
+        </div>
+
+        <img src="/uploads/default/original/1X/56505fa6af9770d1f3e157075e3b33c373e4c0bb.png" class="modal-close" {{action "closeModal"}}>
+
+        {{#if showCreateForm}}
+          <h3 class="why-create-account">
+            Create a new account
+          </h3>
+
+          <a class="has-account-text">
+            Already have an account?
+            <span class="has-account-link" {{action "showLogin"}}> : SIGN IN</span>
+          </a>
+
+          <div class="signin-options">
+            <div class="left">
+              <form class="centered">
+
+                <div class="input-wrapper">
+                  <label>
+                    {{input type="email" value=accountEmail id="new-account-email" disabled=emailValidated name="email" autofocus="autofocus" placeholder="Enter email"}}
+                    {{partial 'svgs/icon-right-arrow'}}
+                    &nbsp;{{input-tip validation=emailValidation}}
+                  </label>
+                </div>
+
+                {{#if usernameRequired}}
+                  <div class="input-wrapper">
+                    <label>
+                      {{input value=accountUsername id="new-account-username" name="username" maxlength=maxUsernameLength placeholder="Username"}}
+                      {{partial 'svgs/icon-right-arrow'}}
+                      &nbsp;{{input-tip validation=usernameValidation id="username-validation"}}
+                    </label>
+                  </div>
+                {{/if}}
+
+                <div class="input-wrapper">
+                  <label>
+                    {{text-field value=accountName id="new-account-name" placeholder="Name"}}
+                    {{partial 'svgs/icon-right-arrow'}}
+                    &nbsp;{{input-tip validation=nameValidation}}
+                  </label>
+                </div>
+
+                {{#if passwordRequired}}
+                  <div class="input-wrapper">
+                    <label>
+                      {{password-field value=accountPassword type="password" id="new-account-password" capsLockOn=capsLockOn placeholder="Enter Password"}}
+                      {{partial 'svgs/icon-right-arrow'}}
+                      &nbsp;{{input-tip validation=passwordValidation}}
+                    </label>
+                  </div>
+
+                  <div class="input-wrapper password-confirmation">
+                    <label>
+                      {{input type="password" value=accountPasswordConfirm id="new-account-confirmation"}}
+                      {{partial 'svgs/icon-right-arrow'}}
+                      {{input value=accountChallenge id="new-account-challenge"}}
+                    </label>
+                  </div>
+                {{/if}}
+
+                {{#if userFields}}
+                  <div class='user-fields'>
+                    {{#each f in userFields}}
+                      {{user-field field=f.field value=f.value}}
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                <button type="submit" class='button dark' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>Submit</button>
+              </form>
+            </div>
+
+            <div class="separator-container">
+              <div class="separator">
+                <div class="text-container">
+                  <h5>
+                    Or
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            {{#unless hasAuthOptions}}
+              <div class="right">
+                <div class="centered">
+                  {{login-buttons action="externalLogin"}}
+                </div>
+              </div>
+            {{/unless}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+<!--
     {{#unless hasAuthOptions}}
       {{login-buttons action="externalLogin"}}
     {{/unless}}
@@ -84,10 +185,11 @@
 
         </form>
       </div>
-    {{/if}}
+    {{/if}} -->
+
   </div>
 
-  {{#if showCreateForm}}
+  <!-- {{#if showCreateForm}}
     <div class="modal-footer">
       <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>{{i18n 'create_account.title'}}</button>
       {{#conditional-loading-spinner condition=formSubmitted size="small"}}
@@ -96,5 +198,5 @@
         </button>
       {{/conditional-loading-spinner}}
     </div>
-  {{/if}}
+  {{/if}} -->
 {{/unless}}

@@ -7,13 +7,15 @@
     padding-top: 132px;
   }
 
-  h5 {
-    font-size: 1em;
-    line-height: 1.5em;
-    letter-spacing: 0.75em;
-    display: inline-block;
+  .list-controls, .list-container {
+    h5 {
+      font-size: 1em;
+      line-height: 1.5em;
+      letter-spacing: 0.75em;
+      display: inline-block;
+    }
   }
-
+  
   .category-breadcrumb {
     a.badge-category {
       color: $medium-gray !important;
@@ -36,7 +38,7 @@
     }
   }
 
-  .nav-pills {
+  .list-controls .nav-pills {
     float: none;
     display: inline-block;
     vertical-align: sub;

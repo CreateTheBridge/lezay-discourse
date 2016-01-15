@@ -1,60 +1,66 @@
 <div class="modal-body">
-  {{login-buttons action="externalLogin"}}
-  {{#if canLoginLocal}}
-    <form id='login-form' method='post'>
-      <div>
-        <table>
-          <tr>
-            <td>
-              <label for='login-account-name'>{{i18n 'login.username'}}&nbsp;</label>
-            </td>
-            <td>
-              {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-                <label for='login-account-password'>{{i18n 'login.password'}}&nbsp;</label>
-            </td>
-            <td>
-                {{password-field value=loginPassword type="password" id="login-account-password" maxlength="200" capsLockOn=capsLockOn}} &nbsp;
-            </td>
-            <td>
-              <a id="forgot-password-link" {{action "forgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div></td>
-            <td></td>
-          </tr>
-        </table>
+  <div class="signup">
+    <div class="frame">
+      <div class="bg-logo">
+        {{partial 'svgs/community-header'}}
       </div>
-    </form>
-  {{/if}}
-  {{authMessage}}
-  <div id='login-alert' {{bind-attr class="alertClass"}}>{{alert}}</div>
-</div>
-<div class="modal-footer">
-  {{#if canLoginLocal}}
-    <button class="btn btn-large btn-primary"
-      {{bind-attr disabled="loginDisabled"}}
-      {{action "login"}}>
-        <i class="fa fa-unlock"></i>&nbsp;{{loginButtonText}}
-    </button>
 
-    {{#if showSignupLink}}
-      &nbsp;
-      <button class="btn btn-large" id="new-account-link" {{action "createAccount"}}>
-        {{i18n 'create_account.title'}}
-      </button>
-    {{/if}}
-  {{/if}}
+      <img src="/uploads/default/original/1X/56505fa6af9770d1f3e157075e3b33c373e4c0bb.png" class="modal-close" {{action "closeModal"}}>
+      <h3 class="why-create-account">Log in</h3>
+      <a class="has-account-text">
+        Want to create an account?
+        <span class="has-account-link" {{action "showCreateAccount"}}> : SIGN UP</span>
+      </a>
 
-  {{#if authenticate}}
-    &nbsp; {{i18n 'login.authenticating'}}
-  {{/if}}
+      <div class="signin-options">
+        <div class="left">
+          {{#if canLoginLocal}}
+            <form id="login-form" class="centered" method="post">
+              <div class="input-wrapper">
+                <label>
+                  {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
+                  {{partial 'svgs/icon-right-arrow'}}
+                </label>
+              </div>
+              <div class="input-wrapper">
+                <label>
+                  {{password-field value=loginPassword type="password" placeholder="Password" id="login-account-password" maxlength="200" capsLockOn=capsLockOn}} &nbsp;
+                  {{partial 'svgs/icon-right-arrow'}}
+                </label>
+              </div>
+              <a id="forgot-password-link" {{action "forgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
+              <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
+              <button type="submit" class="btn btn-large btn-primary"
+                {{bind-attr disabled="loginDisabled"}} {{action "login"}}>
+                  {{loginButtonText}}
+              </button>
+            </form>
+          {{/if}}
+          {{authMessage}}
+          <div id='login-alert' {{bind-attr class="alertClass"}}>{{alert}}</div>
+          {{#if authenticate}}
+            &nbsp; {{i18n 'login.authenticating'}}
+          {{/if}}
 
-  {{conditional-loading-spinner condition=showSpinner size="small"}}
+          {{conditional-loading-spinner condition=showSpinner size="small"}}
+        </div>
+
+        <div class="separator-container">
+          <div class="separator">
+            <div class="text-container">
+              <h5>
+                Or
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="centered">
+            {{login-buttons action="externalLogin"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,15 +1,15 @@
 $responsive-width: 900px;
 
 #discourse-modal {
-  .modal-middle-container {
-    margin: 0;
+  &.create-account, &.login-modal {
+    .modal-middle-container {
+      margin: 0;
 
-    .modal-inner-container {
-      margin-bottom: 0;
+      .modal-inner-container {
+        margin-bottom: 0;
+      }
     }
-  }
 
-  &.create-account {
     .modal-inner-container {
       max-width: 70rem;
       border: none;
@@ -79,6 +79,8 @@ $responsive-width: 900px;
 
     .why-create-account {
       margin-top: 4.125rem;
+      font-size: 2.25em;
+      line-height: 1.33333em;
       font-style: italic;
     }
 
@@ -122,6 +124,11 @@ $responsive-width: 900px;
     .signin-options {
       width: 100%;
       margin: 1.5em 0;
+
+      label {
+        font-size: 1rem;
+        float: none;
+      }
 
       .left, .right {
         vertical-align: top;
@@ -356,6 +363,12 @@ $responsive-width: 900px;
         }
 
       }
+    }
+  }
+
+  &.login-modal {
+    .signin-options .left input:not([type='checkbox']) {
+      margin-bottom: 33px;
     }
   }
 }

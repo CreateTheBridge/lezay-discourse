@@ -1,0 +1,261 @@
+.container .user-main {
+  .staff-counters {
+    background: $light-gray;
+
+    a {
+      color: $medium-gray;
+    }
+  }
+
+  .about {
+    margin-bottom: 0;
+
+    &.collapsed-info .details {
+      background: $light-gray;
+    }
+
+    .details {
+      background: rgba(244, 244, 244, 0.85);
+
+      .primary {
+        h1, h2 {
+          color: $medium-gray;
+        }
+
+        h1 {
+          font-weight: 500;
+        }
+
+        .controls {
+          a {
+            color: $dark-gray;
+            font-weight: 500;
+            background: transparent;
+            text-transform: uppercase;
+
+            &:hover {
+              color: scale_color($dark-gray, $lightness: 20%);
+            }
+
+            i {
+              display: none;
+            }
+
+            &.expand {
+              i {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .secondary {
+      background: white;
+
+      dt {
+        color: $medium-gray;
+      }
+
+      dl span, dd {
+        color: #999999;
+      }
+    }
+  }
+
+  .user-navigation {
+    width: 26.62%;
+    margin-top: 0;
+    padding: 2rem 2.5%;
+    background: $light-gray;
+    box-sizing: border-box;
+
+    .nav-stacked {
+      background: white;
+
+      .glyph {
+        display: none;
+      }
+
+      & > li {
+        border: 0;
+        text-transform: uppercase;
+      }
+
+      .active > a {
+        background-color: $blue;
+      }
+    }
+
+    h3 {
+      margin-bottom: 0;
+      padding: 10px 0 10px 30px;
+      background-color: white;
+      font-family: $font-family;
+      text-transform: uppercase;
+
+      i {
+        display: none;
+      }
+    }
+
+    .user-archive {
+      button {
+        width: 100%;
+        float: none;
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .user-right {
+    width: 70%;
+    margin-top: 0;
+
+    .item {
+      a {
+        color: $blue;
+
+        &:hover {
+          color: scale_color($blue, $lightness: -20%);
+        }
+      }
+    }
+
+    .badge-wrapper.bullet .badge-category-bg {
+      line-height: 0.8;
+    }
+
+    .paginated-topics-list {
+      a.new-private-message {
+        color: $blue;
+        font-weight: 500;
+        background: transparent;
+        text-transform: uppercase;
+
+        &:hover {
+          color: scale_color($blue, $lightness: -20%);
+        }
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .user-stream {
+    .avatar-link {
+      margin-right: 12px;
+    }
+
+    .time {
+      color: $medium-gray;
+    }
+  }
+
+  .user-content {
+    border: none;
+
+    input:not([type='checkbox']) {
+      // width: 100%;
+      height: auto;
+      padding: 1rem 1.5rem;
+      margin-bottom: 0.5rem;
+      color: $dark-gray;
+      font-size: 0.75rem;
+      letter-spacing: 0.075em;
+      line-height: normal;
+      background: white;
+      border-radius: 0;
+      border: 1px solid $stroke-gray;
+      display: block;
+      box-sizing: border-box;
+      box-shadow: none;
+      transition: all 300ms;
+
+      @include placeholder {
+        color: $dark-gray;
+        text-transform: uppercase;
+      }
+
+      &:focus {
+        border: 1px solid $blue;
+      }
+    }
+
+    textarea {
+      border-radius: 0;
+      box-shadow: none;
+      transition: all 300ms;
+
+      &:focus {
+        border-color: $blue;
+        background: white;
+        box-shadow: none;
+      }
+    }
+
+    div.ac-wrap {
+      border: none;
+    }
+
+    button.save-user {
+      padding: 0.9em 2em;
+      display: inline-block;
+      font-size: $button-font-size;
+      font-weight: $button-font-weight;
+      color: $button-color;
+      background-color: $button-background-color;
+      border: $button-border;
+      border: $button-border solid $button-border-color;
+      border-radius: 0; //$round-edges;
+      transition: all 300ms ease-out;
+      user-select: none;
+      cursor: pointer;
+      outline: none;
+      text-align: center;
+
+      color: white;
+      font-family: $font-family;
+      border: none;
+      background-color: $dark-gray;
+      text-transform: uppercase;
+
+      &:hover {
+        color: white;
+        background-color: scale-color($dark-gray, $lightness: 10%);
+        border: $button-border solid $button-border-color-hover;
+      }
+    }
+  }
+
+  .user-preferences input {
+    margin-top: 0;
+  }
+
+  @media only screen and (max-width: 414px) {
+    .user-navigation {
+      width: 100%;
+      margin-top: 20px;
+      padding: 2rem 1rem;
+
+      h3 {
+        margin: 0;
+        padding-left: 13px;
+      }
+    }
+
+    .user-archive {
+      display: block;
+    }
+
+    .user-right {
+      width: 100%;
+    }
+  }
+}

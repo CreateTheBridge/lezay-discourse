@@ -158,15 +158,28 @@
     }
   }
 
-  .user-content {
+  .user-preferences {
     border: none;
+
+    .control-group {
+      .control-label {
+        color: $medium-gray;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+
+    .static, .instructions {
+      color: $medium-gray;
+    }
 
     input:not([type='checkbox']) {
       // width: 100%;
       height: auto;
       padding: 1rem 1.5rem;
+      margin-top: 0;
       margin-bottom: 0.5rem;
-      color: $dark-gray;
+      color: $medium-gray;
       font-size: 0.75rem;
       letter-spacing: 0.075em;
       line-height: normal;
@@ -179,7 +192,7 @@
       transition: all 300ms;
 
       @include placeholder {
-        color: $dark-gray;
+        color: $medium-gray;
         text-transform: uppercase;
       }
 
@@ -225,6 +238,7 @@
       border: none;
       background-color: $dark-gray;
       text-transform: uppercase;
+      float: none;
 
       &:hover {
         color: white;
@@ -232,10 +246,6 @@
         border: $button-border solid $button-border-color-hover;
       }
     }
-  }
-
-  .user-preferences input {
-    margin-top: 0;
   }
 
   @media only screen and (max-width: 414px) {

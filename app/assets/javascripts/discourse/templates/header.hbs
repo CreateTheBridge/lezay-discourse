@@ -12,51 +12,51 @@
 
             <li>
               <a href="/">
-                HOME
+                {{i18n "full-menu.home"}}
               </a>
             </li>
 
             <li>
               <a href="/about">
-                ABOUT
+                {{i18n "full-menu.about"}}
               </a>
             </li>
 
             <li>
               <a href="community">
-                COMMUNITY
+                {{i18n "full-menu.community"}}
               </a>
             </li>
 
             <li>
               <a href="/shop">
-                SHOP
+                {{i18n "full-menu.shop"}}
               </a>
             </li>
 
             <li>
               <a href="//blog.lezay.com/">
-                BLOG
+                {{i18n "full-menu.blog"}}
               </a>
             </li>
 
             <div class="lezaypedia-and-brands">
               <li>
                 <a href="/lezaypedia">
-                  LEZAYPEDIA
+                  {{i18n "full-menu.lezaypedia"}}
                 </a>
               </li>
 
               <li>
                 <a href="/brands">
-                  OUR BRANDS
+                  {{i18n "full-menu.brands"}}
                 </a>
               </li>
             </div>
 
             <li>
               <a href="#">
-                START CONSULTATION
+                {{i18n "full-menu.consultation"}}
               </a>
             </li>
 
@@ -64,7 +64,7 @@
               {{#if showSignUpButton}}
                 <li>
                   <a href="#" {{action "showCreateAccount"}} class="close-nav">
-                    LOGIN<
+                    {{i18n "login.title"}}
                   </a>
                 </li>
               {{/if}}
@@ -78,19 +78,19 @@
       <li class="company-info content-bar">
         <div class="vertical-centered-container">
           <h2>
-            Company
+            {{i18n "full-menu.company-info.company"}}
           </h2>
 
           <a class="mission">
-            Our mission is your skin. We want that you feel great in your own skin, that you are yourself with what you are.
+            {{i18n "full-menu.company-info.mission"}}
           </a>
           <p>
-            That's why we only propose products that have a higher concentration of active ingredients. We have selected our products portfolio with our professional experts, our chemist Rainer Kröpke and our surgeon Dr. Yusuf Yildirim.
+            {{i18n "full-menu.company-info.second-paragraph"}}
           </p>
           <ul class="contact-info">
             <li>
               <p>
-                CONTACT:
+                {{i18n "full-menu.contact"}}:
               </p>
               <a href="tel:+4915115725142">
                 <p>
@@ -101,7 +101,7 @@
 
             <li>
               <p>
-                EMAIL:
+                {{i18n "full-menu.email"}}:
               </p>
               <a href="mailto:hello@lezay.com">
                 <p>
@@ -166,7 +166,9 @@
           {{#if showSignUpButton}}
             <li>
               <a href="#" {{action "showCreateAccount"}}>
-                <span data-hover="LOGIN/SIGN UP">LOGIN/SIGN UP</span>
+                <span data-hover='{{i18n "full-menu.login"}}/{{i18n "full-menu.signup"}}'>
+                  {{i18n "full-menu.login"}}/{{i18n "full-menu.signup"}}
+                </span>
               </a>
             </li>
           {{/if}}

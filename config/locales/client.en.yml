@@ -17,6 +17,24 @@
 
 en:
   js:
+    full-menu:
+      title: 'Full Menu'
+      home: 'Home'
+      about: 'About'
+      community: 'Community'
+      shop: 'Shop'
+      blog: 'Blog'
+      lezaypedia: 'LEZAYpedia'
+      brands: 'Our Brands'
+      consultation: 'Start Consultation'
+      company-info:
+        company: 'Company'
+        mission: "Our mission is your skin. We want that you feel great in your own skin, that you are yourself with what you are."
+        second-paragraph: "That's why we only propose products that have a higher concentration of active ingredients. We have selected our products portfolio with our professional experts, our chemist Rainer Kröpke and our surgeon Dr. Yusuf Yildirim."
+      contact: 'Contact'
+      email: 'Email'
+      login: 'Login'
+      signup: 'Sign Up'
     number:
       format:
         separator: "."

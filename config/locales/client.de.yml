@@ -7,6 +7,24 @@
 
 de:
   js:
+    full-menu:
+      title: 'Full Menu'
+      home: 'Home'
+      about: 'Über Uns'
+      community: 'Community'
+      shop: 'Shop'
+      blog: 'Blog'
+      lezaypedia: 'LEZAYpedia'
+      brands: 'Unsere Marken'
+      consultation: 'Hautanalyse starten'
+      company-info:
+        company: 'Company'
+        mission: "Unsere Mission ist Deine Haut. Our mission is your skin. We want that you feel great in your own skin, that you are yourself with what you are."
+        second-paragraph: "Deswegen empfehlen wir Dir effektive Hautpflegeprodute mit einer höheren Konzentrierung von Aktivwirkstoffen, die so formuliert sind, dass sie auch auf deiner Haut wirken. Wir haben unser Produktportfolio mit unseren dermatologischen Experten sorgfältig zusammen gestellt."
+      contact: 'Kontakt'
+      email: 'Email'
+      login: 'Login'
+      signup: 'Registrierung'
     number:
       format:
         separator: ","

@@ -4,7 +4,7 @@
   }
 
   #main-outlet {
-    padding-top: 132px;
+    padding-top: 127px;
   }
 
   .list-controls, .list-container {
@@ -15,7 +15,7 @@
       display: inline-block;
     }
   }
-  
+
   .category-breadcrumb {
     a.badge-category {
       color: $medium-gray !important;
@@ -36,6 +36,10 @@
         }
       }
     }
+  }
+
+  .list-controls .nav {
+    margin-bottom: 13px;
   }
 
   .list-controls .nav-pills {
@@ -81,6 +85,7 @@
   }
 
   .topic-list th {
+    padding: 13px 5px;
     color: $medium-gray;
     letter-spacing: 0.075em;
     text-transform: uppercase;
@@ -101,11 +106,31 @@
   }
 
   .topic-list td {
+    padding: 17px 5px;
     color: #999999;
+
+    .topic-excerpt {
+      font-size: 0.875rem;
+      line-height: 1.71429rem;
+    }
   }
 
   .topic-list .sortable:hover {
     background-color: $light-gray;
+  }
+
+  .topic-list {
+    .posts {
+      width: 126px;
+    }
+
+    .views {
+      width: 92px;
+    }
+
+    .activity {
+      width: 104px;
+    }
   }
 
   .topic-list-item .category {

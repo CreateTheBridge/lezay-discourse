@@ -39,16 +39,22 @@
     }
   }
 
-  .topic-meta-data .post-info a {
-    color: #999999;
+  .topic-meta-data {
+    margin-top: 12px;
 
-    &:hover {
-      color: scale_color(#999999, $lightness: 20%) !important;
+    .post-info a {
+      color: #999999;
+
+      &:hover {
+        color: scale_color(#999999, $lightness: 20%) !important;
+      }
     }
   }
 
   .cooked > * {
     color: $medium-gray;
+    font-size: 0.875rem;
+    line-height: 1.71429rem;
   }
 
   .topic-map {

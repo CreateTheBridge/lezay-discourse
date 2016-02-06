@@ -55,6 +55,32 @@ p, dt, dd, td {
   line-height: 1.71429rem;
 }
 
+table.topic-list.categories a.title {
+  color: $blue;
+
+  &:hover {
+    color: scale_color($blue, $lightness: -20%);
+  }
+}
+
+.topic-area .topic-body.highlighted {
+  background-color: dark-light-diff($blue, $light-blue, 85%, -65%);
+}
+
+#main {
+  .alert.alert-info {
+    background-color: $light-blue;
+  }
+
+  .btn-primary {
+    background-color: $blue;
+
+    &:hover {
+      background-color: scale_color($blue, $lightness: -20%);
+    }
+  }
+}
+
 
 // body {
 //   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');

@@ -81,6 +81,41 @@ table.topic-list.categories a.title {
   }
 }
 
+// Cookie notification styles
+@media screen and (min-width: 500px) {
+  body .cc_container {
+    right: initial; left: 20px;
+  }
+}
+
+body {
+  .cc_banner-wrapper {
+    z-index: 2147483647;
+  }
+
+  .cc_container .cc_btn, .cc_container .cc_btn:visited {
+    padding: 0.9em 2em;
+    display: inline-block;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    color: $button-color;
+    background-color: $button-background-color;
+    border: $button-border;
+    border: $button-border solid $button-border-color;
+    border-radius: 0; //$round-edges;
+    transition: all 300ms ease-out;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+
+    &:hover {
+      color: $button-color-hover;
+      background-color: $button-background-color-hover;
+      border: $button-border solid $button-border-color-hover;
+    }
+  }
+}
 
 // body {
 //   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');

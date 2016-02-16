@@ -6,14 +6,14 @@
       </div>
 
       <img src="/uploads/default/original/1X/dc45287c97ea19939287773769df0a7180885a99.png" class="modal-close" {{action "closeModal"}}>
-      <h3 class="why-create-account">Log in</h3>
-      <a class="has-account-text">
-        Want to create an account?
-        <span class="has-account-link" {{action "showCreateAccount"}}> : SIGN UP</span>
-      </a>
+      <h3 class="why-create-account">{{i18n 'auth.welcome-back'}}</h3>
 
       <div class="signin-options">
         <div class="left">
+          <a class="has-account-text">
+            {{i18n 'auth.dont-have'}}
+            <span class="has-account-link" {{action "showCreateAccount"}}> : {{i18n 'full-menu.signup'}}</span>
+          </a>
           {{#if canLoginLocal}}
             <form id="login-form" class="centered" method="post">
               <div class="input-wrapper">
@@ -30,7 +30,7 @@
               </div>
               <a id="forgot-password-link" {{action "forgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
               <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
-              <button type="submit" class="btn btn-large btn-primary"
+              <button type="submit" class="button inverter"
                 {{bind-attr disabled="loginDisabled"}} {{action "login"}}>
                   {{loginButtonText}}
               </button>

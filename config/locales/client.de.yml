@@ -25,6 +25,11 @@ de:
       email: 'Email'
       login: 'Login'
       signup: 'Registrierung'
+    auth:
+      welcome-back: 'Willkommen zurück'
+      dont-have: "Noch kein Mitglied?"
+      create-account: 'Ein neues Konto erstellen'
+      already-have: 'Du bist schon Mitglied?'
     number:
       format:
         separator: ","
@@ -701,7 +706,7 @@ de:
       failed: "Etwas ist fehlgeschlagen. Vielleicht ist diese E-Mail-Adresse bereits registriert. Versuche den 'Passwort vergessen'-Link."
     forgot_password:
       title: "Passwort zurücksetzen"
-      action: "Ich habe mein Passwort vergessen"
+      action: 'Passwort vergessen?'
       invite: "Gib deinen Benutzernamen oder deine E-Mail-Adresse ein. Wir senden dir eine E-Mail zum Zurücksetzen des Passworts."
       reset: "Passwort zurücksetzen"
       complete_username: "Wenn ein Benutzerkonto dem Benutzernamen <b>%{username}</b> entspricht, solltest du in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen deines Passwortes erhalten."

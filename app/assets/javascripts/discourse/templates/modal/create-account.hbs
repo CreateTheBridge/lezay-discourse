@@ -10,16 +10,16 @@
 
         {{#if showCreateForm}}
           <h3 class="why-create-account">
-            Create a new account
+            {{i18n 'auth.create-account'}}
           </h3>
-
-          <a class="has-account-text">
-            Already have an account?
-            <span class="has-account-link" {{action "showLogin"}}> : SIGN IN</span>
-          </a>
 
           <div class="signin-options">
             <div class="left">
+              <a class="has-account-text">
+                {{i18n 'auth.already-have'}}
+                <span class="has-account-link" {{action "showLogin"}}> : {{i18n 'full-menu.login'}}</span>
+              </a>
+
               <form class="centered">
 
                 <div class="input-wrapper">
@@ -74,7 +74,7 @@
                   </div>
                 {{/if}}
 
-                <button type="submit" class='button dark' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>Submit</button>
+                <button type="submit" class='button inverter' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>Submit</button>
               </form>
             </div>
 

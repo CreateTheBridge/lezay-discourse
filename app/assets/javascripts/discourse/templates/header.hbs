@@ -57,7 +57,7 @@
             {{#unless currentUser}}
               {{#if showSignUpButton}}
                 <li>
-                  <a href="#" {{action "showCreateAccount"}} class="close-nav">
+                  <a href="#" {{action "showLogin"}} class="close-nav">
                     {{i18n "login.title"}}
                   </a>
                 </li>
@@ -159,7 +159,7 @@
         {{#unless currentUser}}
           {{#if showSignUpButton}}
             <li>
-              <a href="#" {{action "showCreateAccount"}}>
+              <a href="#" {{action "showLogin"}}>
                 <span data-hover='{{i18n "full-menu.login"}}/{{i18n "full-menu.signup"}}'>
                   {{i18n "full-menu.login"}}/{{i18n "full-menu.signup"}}
                 </span>

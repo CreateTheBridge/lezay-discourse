@@ -145,6 +145,10 @@ $responsive-width: 900px;
         text-align: left;
         text-transform: uppercase;
 
+        .centered {
+          margin-top: 19px;
+        }
+
         .centered .input-wrapper {
           position: relative;
 
@@ -181,6 +185,10 @@ $responsive-width: 900px;
           &:focus {
             border: 1px solid $blue;
           }
+
+          &#login-account-password {
+            margin-bottom: 0;
+          }
         }
 
         label {
@@ -205,9 +213,17 @@ $responsive-width: 900px;
           }
         }
 
+        a#forgot-password-link {
+          font-size: .75em !important;
+          line-height: 2em;
+          font-weight: 400;
+          float: right;
+        }
+
         button {
           margin-top: 1.5rem;
-          display: none;
+          width: 100%;
+          border: 1px solid $stroke-gray;
         }
       }
 
